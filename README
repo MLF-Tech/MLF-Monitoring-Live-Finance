@@ -53,7 +53,7 @@ To run this project locally, ensure you have the necessary prerequisites install
 
 ### 1. Initial Setup and Configuration
 
-```bash
+````bash
 # Clone the repository
 git clone [https://github.com/MLF-tech/MLF-Monitoring-Live-Finance.git](https://github.com/MLF-tech/MLF-Monitoring-Live-Finance.git)
 cd MLF-Monitoring-Live-Finance
@@ -66,9 +66,12 @@ cp .env.example .env
 # Example .env file structure
 FINANCIAL_API_KEY=your_api_key_here
 DATABASE_URL=your_database_connection_string_here
-2. Backend Initialisation and Start (server/)
-Bash
 
+---
+
+### 2. Backend Initialisation and Start (server/)
+
+```bash
 # Navigate to the backend directory
 cd server
 
@@ -86,15 +89,20 @@ npx tsc --init
 # Create source structure and base file
 mkdir src
 touch src/index.ts
+
 # NOTE: Insert the base Express server code into src/index.ts
 
-# 6. Add start scripts to server/package.json
-# (Add "dev" and "start" scripts to the "scripts" section)
+# Update "scripts" section in package.json with the following:
+# "start": "ts-node src/index.ts",
+# "dev": "ts-node-dev src/index.ts",
 
 # Start the Node.js API server in development mode (with auto-restart on file changes)
 npm run dev
 
 # The server should start on http://localhost:4000
+
+----
+
 💻 Frontend Initialisation and Start (client/)
 Bash
 
@@ -114,4 +122,4 @@ cd client
 Developed by Maria-Laura Fagioli | (https://www.linkedin.com/in/marialaurafagioli/)
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-```
+````
