@@ -66,42 +66,52 @@ cp .env.example .env
 # Example .env file structure
 FINANCIAL_API_KEY=your_api_key_here
 DATABASE_URL=your_database_connection_string_here
-```
-
-### ⚙️ Backend Initialisation and Start (server/)
+2. Backend Initialisation and Start (server/)
+Bash
 
 # Navigate to the backend directory
-
 cd server
 
-# Install dependencies
+# Initialize Node.js project (creates package.json)
+npm init -y
 
-npm install
+# Install core dependencies (Express, Cors, Dotenv) and TypeScript development tools/types
+npm install express cors dotenv && \
+npm install typescript ts-node ts-node-dev @types/node @types/express @types/cors --save-dev
 
-# Start the Node.js API server
+# Initialize and configure TypeScript (creates tsconfig.json)
+npx tsc --init
+# NOTE: Edit tsconfig.json to set "module": "CommonJS", "rootDir": "./src", etc.
 
+# Create source structure and base file
+mkdir src
+touch src/index.ts
+# NOTE: Insert the base Express server code into src/index.ts
+
+# 6. Add start scripts to server/package.json
+# (Add "dev" and "start" scripts to the "scripts" section)
+
+# Start the Node.js API server in development mode (with auto-restart on file changes)
 npm run dev
 
 # The server should start on http://localhost:4000
+💻 Frontend Initialisation and Start (client/)
+Bash
 
-### 💻 Frontend Initialisation and Start (client/)
-
-# Navigate to the frontend directory
-
-cd ../client
+# Navigate back to the root and then into the frontend directory
+cd ..
+cd client
 
 # Install dependencies (To be implemented)
-
 # npm install
 
 # Start the React client (To be implemented)
-
 # npm run dev
 
 ---
 
-### 📞 Contact & Licensing
-
+📞 Contact & Licensing
 Developed by Maria-Laura Fagioli | (https://www.linkedin.com/in/marialaurafagioli/)
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+```
