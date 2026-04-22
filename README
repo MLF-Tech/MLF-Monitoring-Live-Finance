@@ -53,68 +53,36 @@ To run this project locally, ensure you have the necessary prerequisites install
 
 ### 1. Initial Setup and Configuration
 
-````bash
+```bash
 # Clone the repository
 git clone [https://github.com/MLF-tech/MLF-Monitoring-Live-Finance.git](https://github.com/MLF-tech/MLF-Monitoring-Live-Finance.git)
 cd MLF-Monitoring-Live-Finance
 
-# Create the environment file for secrets
-cp .env.example .env
-
-# IMPORTANT: Update the .env file with your specific API key and database connection string.
-
-# Example .env file structure
-FINANCIAL_API_KEY=your_api_key_here
-DATABASE_URL=your_database_connection_string_here
+# Setup the environment file for secrets
+cd server
+touch .env
+# Add your key: FINANCIAL_API_KEY=your_actual_key_here
 
 ---
 
-### 2. Backend Initialisation and Start (server/)
-
-```bash
-# Navigate to the backend directory
+### 2. Backend Start (`server/`)
+# Tutte le configurazioni (package.json, tsconfig.json) sono già presenti.
+# Devi solo installare e partire:
 cd server
-
-# Initialize Node.js project (creates package.json)
-npm init -y
-
-# Install core dependencies (Express, Cors, Dotenv) and TypeScript development tools/types
-npm install express cors dotenv && \
-npm install typescript ts-node ts-node-dev @types/node @types/express @types/cors --save-dev
-
-# Initialize and configure TypeScript (creates tsconfig.json)
-npx tsc --init
-# NOTE: Edit tsconfig.json to set "module": "CommonJS", "rootDir": "./src", etc.
-
-# Create source structure and base file
-mkdir src
-touch src/index.ts
-
-# NOTE: Insert the base Express server code into src/index.ts
-
-# Update "scripts" section in package.json with the following:
-# "start": "ts-node src/index.ts",
-# "dev": "ts-node-dev src/index.ts",
-
-# Start the Node.js API server in development mode (with auto-restart on file changes)
+npm install
 npm run dev
 
-# The server should start on http://localhost:4000
+### 3. Frontend Start (`client/`)
+cd ../client
+npm install
+npm run dev
 
-----
+---
 
-💻 Frontend Initialisation and Start (client/)
-Bash
+## 📘 Technical Glossary & Documentation
+To ensure a deep understanding of the stack and architectural choices, every step of the initialization and every tool used is documented in our internal glossary.
 
-# Navigate back to the root and then into the frontend directory
-cd ..
-cd client
-
-# Install dependencies (To be implemented)
-# npm install
-
-# Start the React client (To be implemented)
-# npm run dev
+👉 **[View the Technical Glossary](./GLOSSARY.md)**
 
 ---
 
@@ -122,4 +90,4 @@ cd client
 Developed by Maria-Laura Fagioli | (https://www.linkedin.com/in/marialaurafagioli/)
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-````
+```
