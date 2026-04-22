@@ -3,7 +3,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import 'dotenv/config'; // It loads environment variables from a .env file
 
-// Inializatione Express app
+// Initializatin Express app
 const app = express();
 // Use the port defined in the .env (or 4000 as fallback)
 const PORT = process.env.PORT || 4000; 
