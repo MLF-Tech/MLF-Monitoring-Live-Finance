@@ -78,8 +78,10 @@ npm install
 npm run dev
 
 ---
+```
 
 ## 📘 Technical Glossary & Documentation
+
 To ensure a deep understanding of the stack and architectural choices, every step of the initialization and every tool used is documented in our internal glossary.
 
 👉 **[View the Technical Glossary](./GLOSSARY.md)**
@@ -90,4 +92,3 @@ To ensure a deep understanding of the stack and architectural choices, every ste
 Developed by Maria-Laura Fagioli | (https://www.linkedin.com/in/marialaurafagioli/)
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-```
