@@ -1,11 +1,12 @@
 // Description: Entry point for the MLF Backend API server using Express and TypeScript
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import axios from 'axios'; 
-import 'dotenv/config'; // Loads environment variables from .env
-
 // Initialization Express app
 const app = express();
+
+app.use(cors()); // This gives the "Green Light" to React
+import axios from 'axios'; 
+import 'dotenv/config'; // Loads environment variables from .env
 // Use the port defined in the .env (or 4000 as fallback)
 const PORT = process.env.PORT || 4000; 
 
